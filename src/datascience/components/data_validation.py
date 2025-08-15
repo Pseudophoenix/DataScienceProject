@@ -12,16 +12,16 @@ class DataValidation:
             data=pd.read_csv(self.config.unzip_data_dir)
             all_cols=list(data.columns)
             all_schema=self.config.all_schema.keys()
-
             for col in all_cols:
-                if col not in all_schema:
+                if (col not in all_schema) or (data[col].dtype!=self.config.all_schema[col]):
                     validation_status=False
                     with open(self.config.STATUS_FILE,'w') as f:
-                        f.write(f"Validation status:{validation_status}")
+                        f.write(f"Validation status: {validation_status}")
+            
                 else:
                     validation_status=True
                     with open(self.config.STATUS_FILE,"w")as f:
-                        f.write(f"Validation Status:{validation_status}")
+                        f.write(f"Validation Status: {validation_status}")
             return validation_status
         except Exception as e:
             raise e
