@@ -11,4 +11,5 @@ types-PyYAML
 Flask
 Flask-Cors
 notebook
+python-box # For exception handling
 numpy
