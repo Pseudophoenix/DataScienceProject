@@ -1,7 +1,7 @@
 from src.datascience.entity.config_entity import (DataIngestionConfig)
 from src.datascience.constants import *
 from src.datascience.utils.common import read_yaml, create_directories
-
+import os
 # Reading the config.yaml and then storing into a DataIngestionConfig class
 
 class ConfigurationManager:
