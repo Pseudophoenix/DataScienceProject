@@ -1,0 +1,130 @@
+schema: '2.0'
+stages:
+  data_ingestion:
+    cmd: python -m src.datascience.pipeline.data_ingestion
+    deps:
+    - path: config/config.yaml
+      hash: md5
+      md5: 11b1abe056c6e19a28dd53bc039f032c
+      size: 1018
+    - path: src/datascience/components/data_ingestion.py
+      hash: md5
+      md5: 456fff7a5f617d94df9675067e426988
+      size: 1096
+    - path: src/datascience/pipeline/data_ingestion.py
+      hash: md5
+      md5: da6dd0be6f97e8a0120577ef80e50004
+      size: 1045
+    outs:
+    - path: artifacts/data_ingestion/winequality-red.csv
+      hash: md5
+      md5: 6a883fd98624e18c0b7ce251f4fab4fb
+      size: 100951
+  data_validation:
+    cmd: python -m src.datascience.pipeline.data_validation
+    deps:
+    - path: artifacts/data_ingestion/winequality-red.csv
+      hash: md5
+      md5: 6a883fd98624e18c0b7ce251f4fab4fb
+      size: 100951
+    - path: config/config.yaml
+      hash: md5
+      md5: 11b1abe056c6e19a28dd53bc039f032c
+      size: 1018
+    - path: src/datascience/components/data_validation.py
+      hash: md5
+      md5: 5ec32a6c66db589fe50ee650aa9949bc
+      size: 1127
+    - path: src/datascience/pipeline/data_validation.py
+      hash: md5
+      md5: b92d91520d18c841d8bc34ed92a7d634
+      size: 1018
+    outs:
+    - path: artifacts/data_validation/status.txt
+      hash: md5
+      md5: c5aff53158692e0817a3632881347e7b
+      size: 23
+  data_transformation:
+    cmd: python -m src.datascience.pipeline.data_transformation_pipeline
+    deps:
+    - path: artifacts/data_validation/status.txt
+      hash: md5
+      md5: c5aff53158692e0817a3632881347e7b
+      size: 23
+    - path: config/config.yaml
+      hash: md5
+      md5: 11b1abe056c6e19a28dd53bc039f032c
+      size: 1018
+    - path: src/datascience/components/data_transformation.py
+      hash: md5
+      md5: c83e80a39b254d24ea44a58a1af130f8
+      size: 884
+    - path: src/datascience/pipeline/data_transformation_pipeline.py
+      hash: md5
+      md5: a22a0ce99d111e84a2b318f8c7613417
+      size: 1429
+    outs:
+    - path: artifacts/data_transformation/test.csv
+      hash: md5
+      md5: 44cb122772cccd9d9d71da799d1efa6a
+      size: 23779
+    - path: artifacts/data_transformation/train.csv
+      hash: md5
+      md5: e9606240da826446b7387ea8d177f5a3
+      size: 71453
+  model_training:
+    cmd: python -m src.datascience.pipeline.model_trainer
+    deps:
+    - path: artifacts/data_transformation/test.csv
+      hash: md5
+      md5: 44cb122772cccd9d9d71da799d1efa6a
+      size: 23779
+    - path: artifacts/data_transformation/train.csv
+      hash: md5
+      md5: e9606240da826446b7387ea8d177f5a3
+      size: 71453
+    - path: config/config.yaml
+      hash: md5
+      md5: 11b1abe056c6e19a28dd53bc039f032c
+      size: 1018
+    - path: src/datascience/components/model_trainer.py
+      hash: md5
+      md5: 35570a57d305a2e9348ae7c073aa792c
+      size: 855
+    - path: src/datascience/pipeline/model_trainer.py
+      hash: md5
+      md5: 0657a0d679053db8d338df90b6d9bd00
+      size: 937
+    outs:
+    - path: artifacts/model_trainer/model.joblib
+      hash: md5
+      md5: 39deb9385d8cdb6485223666ffb6368a
+      size: 1136
+  model_evaluation:
+    cmd: python -m src.datascience.pipeline.model_evaluation
+    deps:
+    - path: artifacts/data_transformation/test.csv
+      hash: md5
+      md5: 44cb122772cccd9d9d71da799d1efa6a
+      size: 23779
+    - path: artifacts/model_trainer/model.joblib
+      hash: md5
+      md5: 39deb9385d8cdb6485223666ffb6368a
+      size: 1136
+    - path: config/config.yaml
+      hash: md5
+      md5: 11b1abe056c6e19a28dd53bc039f032c
+      size: 1018
+    - path: src/datascience/components/model_evaluation.py
+      hash: md5
+      md5: 71b6cd1c0a126555f3dbb14346fa8e69
+      size: 2011
+    - path: src/datascience/pipeline/model_evaluation.py
+      hash: md5
+      md5: 00ce25d585d4225a2b8cd2e01718d674
+      size: 986
+    outs:
+    - path: artifacts/model_evaluation/metrics.json
+      hash: md5
+      md5: 98b26aa8ac1b2c8367b5128cd43c875d
+      size: 99
