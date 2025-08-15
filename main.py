@@ -7,7 +7,7 @@ from src.datascience import logger
 from src.datascience.pipeline.data_validation import DataValidationPipeline
 from src.datascience.pipeline.data_transformation_pipeline import DataTransformationPipeline
 from src.datascience.pipeline.model_trainer import ModelTrainerPipeline
-from src.datascience.pipeline.model_evaluation import ModelEvaluation
+from src.datascience.pipeline.model_evaluation import ModelEvaluationPipeline
 STAGE_NAME="Data Ingestion stage"
 
 logger.info('Welcome to our custom logging data science')
@@ -54,9 +54,8 @@ STAGE_NAME="Model Evaluation Stage"
 
 try:
         logger.info(f">>>> Stage {STAGE_NAME} started <<<<<")
-        obj=ModelEvaluation()
-        obj.initaite_model_evaluation
-        ()
+        obj=ModelEvaluationPipeline()
+        obj.initaite_model_evaluation()
         logger.info(f">>>> Stage {STAGE_NAME} completed <<<<<\nx=========================x")
 except Exception as e:
         logger.exception(e)

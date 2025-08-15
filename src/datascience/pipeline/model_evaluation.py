@@ -1,9 +1,9 @@
 from src.datascience.utils.configuration import ConfigurationManager
 from src.datascience import logger
-
+from src.datascience.components.model_evaluation import ModelEvaluation
 STAGE_NAME="Model Evaluation Stage"
 
-class ModelEvaluation:
+class ModelEvaluationPipeline:
     def __init__(self):
         pass
     def initaite_model_evaluation(self):
@@ -18,8 +18,7 @@ if __name__=="__main__":
     try:
         logger.info(f">>>> Stage {STAGE_NAME} started <<<<<")
         obj=ModelEvaluation()
-        obj.initaite_model_evaluation
-        ()
+        obj.initaite_model_evaluation()
         logger.info(f">>>> Stage {STAGE_NAME} completed <<<<<\nx=========================x")
     except Exception as e:
         logger.exception(e)

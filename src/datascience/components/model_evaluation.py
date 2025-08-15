@@ -22,6 +22,7 @@ class ModelEvaluation:
         r2=r2_score(actual,pred)
         return rmse, mae, r2
     def log_into_mlflow(self):
+        print("*************************")
         test_data=pd.read_csv(self.config.test_data_path)
         model=joblib.load(self.config.model_path)
         test_x=test_data.drop([self.config.target_column],axis=1)
