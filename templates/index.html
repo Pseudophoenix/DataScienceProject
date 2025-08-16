@@ -1,0 +1,106 @@
+<html>
+  <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous" />
+  </head>
+
+  <body>
+    <div class="container">
+      <class class="formv9">
+        <div class="page-content">
+          <div class="form-v9-content">
+            <form action="/predict" method="post">
+              <h2>Please fill the information</h2>
+              <div class="form-row-total">
+                <div class="mb-3 form-row">
+                  <label for="fixed_acidity" class="form-label">Fixed Acidity:</label>
+                  <input type="text" 
+                  name="fixed_acidity" 
+                  class="form-control input-text" id="exampleFormControlInput1" placeholder="fixed_acidity" required />
+                </div>
+                <div class="mb-3">
+                  <label for="exampleFormControlInput1" class="form-label">Volatile Acidity:</label>
+                  <input type="text" 
+                  name="volatile_acidity" 
+                  class="form-control input-text" id="exampleFormControlInput1" placeholder="volatile_acidity" required />
+                </div>
+              </div>
+              <div class="form-row-total">
+                <div class="mb-3 form-row">
+                  <label for="exampleFormControlInput1" class="form-label">Citric Acid:</label>
+                  <input type="text" 
+                  name="citric_acid" 
+                  class="form-control input-text" id="exampleFormControlInput1" placeholder="citric_acid" required />
+                </div>
+                <div class="mb-3 form-row">
+                  <label for="exampleFormControlInput1" class="form-label">Residual Sugar:</label>
+                  <input type="text" 
+                  name="residual_sugar" 
+                  class="form-control input-text" id="exampleFormControlInput1" placeholder="residual_sugar" required />
+                </div>
+              </div>
+              <div class="form-row-total">
+                <div class="mb-3 form-row">
+                  <label for="exampleFormControlInput1" class="form-label">Chlorides:</label>
+                  <input type="text" 
+                  name="chlorides" 
+                  class="form-control input-text" id="exampleFormControlInput1" placeholder="chlorides" required />
+                </div>
+                <div class="mb-3 form-row">
+                  <label for="exampleFormControlInput1" class="form-label">Free Sulfur Dioxide:</label>
+                  <input type="text" 
+                  name="free_sulfur_dioxide" 
+                  class="form-control input-text" id="exampleFormControlInput1" placeholder="free_sulfur_dioxide" required />
+                </div>
+              </div>
+
+              <div class="form-row-total">
+                <div class="mb-3 form-row">
+                  <label for="exampleFormControlInput1" class="form-label">Total Sulfur Dioxide:</label>
+                  <input type="text" 
+                  name="total_sulfur_dioxide" 
+                  class="form-control input-text" id="exampleFormControlInput1" placeholder="total_sulfur_dioxide" required />
+                </div>
+                <div class="mb-3 form-row">
+                  <label for="exampleFormControlInput1" class="form-label">Density:</label>
+                  <input type="text" 
+                  name="density" 
+                  class="form-control input-text" id="exampleFormControlInput1" placeholder="density" required />
+                </div>
+              </div>
+              <div class="form-row-total">
+                <div class="mb-3 form-row">
+                  <label for="exampleFormControlInput1" class="form-label">pH:</label>
+                  <input type="text" 
+name="pH" 
+
+                  
+                  class="form-control input-text" id="exampleFormControlInput1" placeholder="pH" required />
+                </div>
+                <div class="mb-3 form-row">
+                  <label for="exampleFormControlInput1" class="form-label">Sulphates:</label>
+                  <input type="text" 
+                  name="sulphates" 
+                  class="form-control input-text" id="exampleFormControlInput1" placeholder="sulphates" required />
+                </div>
+              </div>
+              <div class="form-row-total">
+                <div class="mb-3 form-row">
+                  <label for="exampleFormControlInput1" class="form-label">Alcohol:</label>
+                  <input type="text" 
+                  name="alcohol"
+                  class="form-control input-text" id="exampleFormControlInput1" placeholder="alcohol" required />
+                </div>
+              </div>
+
+				<div class="form-row-last ">
+					<input type="submit" name="register" class="register btn btn-outline-primary" value="Predict">
+    
+				</div>
+            </form>
+          </div>
+        </div>
+      </class>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -17,7 +17,7 @@ class ModelEvaluationPipeline:
 if __name__=="__main__":
     try:
         logger.info(f">>>> Stage {STAGE_NAME} started <<<<<")
-        obj=ModelEvaluation()
+        obj=ModelEvaluationPipeline()
         obj.initaite_model_evaluation()
         logger.info(f">>>> Stage {STAGE_NAME} completed <<<<<\nx=========================x")
     except Exception as e:
