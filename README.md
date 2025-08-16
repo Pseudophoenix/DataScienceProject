@@ -22,3 +22,7 @@
 X Direct working in Jupyter Notebook
 
 ✓ Modular coding
+
+
+## DOCKER WORKFLOW TO BE WRITTEN
+Upload to DockerHub

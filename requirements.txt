@@ -1,6 +1,6 @@
 pandas
 scikit-learn
-mlflow
+mlflow<3.0
 numpy
 matplotlib
 pyYAML
