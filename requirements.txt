@@ -2,7 +2,7 @@ pandas
 scikit-learn
 mlflow<3.0
 numpy
-matplotlib
+# matplotlib
 pyYAML
 tqdm
 ensure
@@ -10,6 +10,6 @@ joblib
 types-PyYAML
 Flask
 Flask-Cors
-notebook
+# notebook
 python-box # For exception handling
-numpy
+dagshub

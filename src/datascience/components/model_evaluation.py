@@ -4,8 +4,8 @@ from urllib.parse import urlparse
 from src.datascience.utils.common import save_json
 from src.datascience.utils.configuration import ModelEvaluationConfig
 from pathlib import Path
-import dagshub
-dagshub.init(repo_owner='alokchoudhary', repo_name='DataScienceProject', mlflow=True)
+# import dagshub
+# dagshub.init(repo_owner='alokchoudhary', repo_name='DataScienceProject', mlflow=True)
 
 # import mlflow
 # with mlflow.start_run():

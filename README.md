@@ -23,6 +23,7 @@ X Direct working in Jupyter Notebook
 
 ✓ Modular coding
 
-
 ## DOCKER WORKFLOW TO BE WRITTEN
+
 Upload to DockerHub
+`docker run -p 8004:8080 --env-file .env <image_name>`

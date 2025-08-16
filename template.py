@@ -5,7 +5,7 @@ logging.basicConfig(level=logging.INFO,format='[%(asctime)s]:%(message)s:')
 
 project_name="datascience"
 list_of_files=[
-    ".github/workflows/.gtikeep",
+    ".github/workflows/.gitkeep",
     f"scr/{project_name}/__init__.py",# __init__.py to allow it to be used anywhere 
     f"src/{project_name}/components/__init__.py",
     f"src/{project_name}/utils/__init__.py",

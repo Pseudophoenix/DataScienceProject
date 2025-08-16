@@ -10,6 +10,11 @@ from src.datascience.pipeline.model_trainer import ModelTrainerPipeline
 from src.datascience.pipeline.model_evaluation import ModelEvaluationPipeline
 STAGE_NAME="Data Ingestion stage"
 
+import os
+os.environ["MLFLOW_TRACKING_URI"]="https://dagshub.com/alokchoudhary/DataScienceProject.mlflow"
+os.environ["MLFLOW_TRACKING_USERNAME"]="alokchoudhary"
+os.environ["MLFLOW_TRACKING_PASSWORD"]="ba1325e0b08be027b9667e6eab725702d8285115"
+
 logger.info('Welcome to our custom logging data science')
 try:
         logger.info(f">>>> Stage {STAGE_NAME} started <<<<<")
@@ -31,7 +36,7 @@ except Exception as e:
         raise e
 
 
-STAGE_NAME="Data Validation stage"
+STAGE_NAME="Data Transformation stage"
 try:
         logger.info(f">>>> Stage {STAGE_NAME} started <<<<<")
         obj=DataTransformationPipeline()
